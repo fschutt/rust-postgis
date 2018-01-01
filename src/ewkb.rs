@@ -782,7 +782,7 @@ pub type MultiPolygonZM = MultiPolygonT<PointZM>;
 
 
 /// Generic Geometry Data Type
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum GeometryT<P: postgis::Point + EwkbRead> {
     Point(P),
     LineString(LineStringT<P>),
@@ -837,7 +837,7 @@ pub type GeometryM = GeometryT<PointM>;
 pub type GeometryZM = GeometryT<PointZM>;
 
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct GeometryCollectionT<P: postgis::Point + EwkbRead> {
     pub geometries: Vec<GeometryT<P>>
 }
