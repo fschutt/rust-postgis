@@ -14,5 +14,8 @@ license = "MIT"
 doctest = false
 
 [dependencies]
-postgres = "^0.15"
 byteorder = "^0.5"
+
+[dependencies.postgres]
+git = "https://github.com/fschutt/rust-postgres"
+branch = "mapedit_fix_postgres_semver"
